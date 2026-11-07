@@ -157,5 +157,10 @@
     "title": "I Can Explain... Probably!",
     "audio": "audio/32.mp3",
     "cover": "assets/covers/I Can Explain... Probably!.png"
+  },
+  {
+    "title": "Holy Smokes",
+    "audio": "audio/33.mp3",
+    "cover": "assets/covers/Holy Smokes.png"
   }
 ]
