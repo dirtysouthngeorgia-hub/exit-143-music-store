@@ -1,11 +1,5 @@
-EXIT 143 RECORD STORE - BUILD 08 TEST
+EXIT 143 RECORD STORE - BUILD 13 TWO-SONG UPDATE
 
-1. Extract the ENTIRE ZIP to a folder.
-2. Open index.html in Chrome or Edge. No server required.
-3. Click BAD INFLUENCE, select a track, then click the PLAY triangle ON THE RED 143 KEY.
-4. The selected track's artwork appears inside the existing upper-right frame.
-5. The approved blank gatefold is preserved as a separate unchanged PNG.
+Based on user-supplied Build 12. Added Down for Another Round and I Can Explain... Probably! as audio/31.mp3 and audio/32.mp3 with approved embedded cover art. Updated tracks.json from 30 to 32 BAD INFLUENCE songs. All other website files preserved.
 
-30 BAD INFLUENCE MP3 files are bundled; DRIP audio is also bundled.
-THOUGHTY NAUGHTS still uses a temporary DRIP shelf sleeve; UNTIL audio is not bundled.
-Test build only, not a locked master.
+For GitHub Pages, upload the CONTENTS of this folder to the repository root (index.html, tracks.json, assets/, audio/). GitHub Pages may take a few minutes to refresh.
