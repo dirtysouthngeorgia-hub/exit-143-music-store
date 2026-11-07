@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXIT 143 | Record Store</title><style>
+:root{color-scheme:dark;--gold:#f8b651;--red:#b32219}*{box-sizing:border-box}body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#120905;color:#f6ddad;font-family:Georgia,serif}button{cursor:pointer;font:inherit}button:focus-visible{outline:3px solid #ffca61;outline-offset:4px}.store{width:min(100vw,calc(100dvh * 1672 / 941));margin:auto;position:relative;aspect-ratio:1672/941;background:url('assets/shelf.png') center/100% 100% no-repeat}.slots{position:absolute;inset:0}.slot{position:absolute;width:9.5%;height:16.8%;border:0;background:transparent;display:flex;justify-content:center;align-items:flex-end;padding:0;transform-origin:bottom center;transition:transform .25s;filter:drop-shadow(4px 7px 3px #080403bb)}.slot:hover,.slot:focus-visible{transform:translateY(-7px) scale(1.045);z-index:2}.sleeve{width:100%;aspect-ratio:1;background:#120907;border:1px solid #4a291c;box-shadow:3px 2px 0 #1a0b06, 7px 5px 7px #000a,0 3px 1px #000;display:grid;place-items:center;text-align:center;overflow:hidden;transform:perspective(750px) rotateX(-4deg);transform-origin:bottom center}.sleeve img{width:100%;height:100%;object-fit:cover}.sleeve b{font-size:clamp(8px,1.3vw,21px);letter-spacing:.04em;text-shadow:1px 2px #000;padding:5px}.sleeve small{font-size:clamp(6px,.65vw,11px)}.slot.empty .sleeve{opacity:0;border:0}.slot.empty{cursor:default}.slot.empty:hover{transform:none}.album-preview{position:absolute;left:0;right:0;bottom:0;background:#120605e8;color:#ffe0b5;font:700 clamp(7px,.65vw,11px) system-ui;padding:3px 1px;text-align:center}.status{position:absolute;bottom:1%;right:3%;font:12px system-ui;color:#f4ca83;background:#160a07a8;padding:4px 8px;border-radius:4px}.overlay{position:fixed;inset:0;background:#050202dc;display:none;z-index:5;align-items:center;justify-content:center;padding:3vw}.overlay.open{display:flex}.gate{width:min(95vw,1400px);height:min(87vh,850px);display:grid;grid-template-columns:1fr 1fr;background:#2c110b;border:12px ridge #9c5227;box-shadow:0 30px 90px #000, inset 0 0 35px #000;position:relative;overflow:hidden}.page{min-width:0;overflow:auto;padding:clamp(16px,2.3vw,40px);background:linear-gradient(100deg,#2b110d,#4c2217 92%,#1b0907);box-shadow:inset -14px 0 30px #130403}.page.right{background:linear-gradient(90deg,#180908,#402017 8%,#27100d);box-shadow:inset 14px 0 30px #130403}.gate h1{font-size:clamp(22px,3vw,46px);margin:0 0 10px;color:#ffd185}.sub{font:13px system-ui;color:#d4a37c;letter-spacing:.14em}.tracks{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:18px}.track{background:#1208078a;border:1px solid #77462b;color:#f8dfb8;padding:8px 6px;text-align:left;font:clamp(10px,.85vw,14px) system-ui;min-height:34px}.track:hover,.track.selected{background:#7e2a1d;border-color:#e3a05c}.cover{display:block;max-width:100%;max-height:49vh;aspect-ratio:1;object-fit:contain;margin:0 auto 10px;cursor:zoom-in;box-shadow:0 8px 25px #000}.song-title{text-align:center;font-size:clamp(18px,2vw,29px);margin:10px 0}.key{background:linear-gradient(125deg,#7e1512,#d43c27,#7a120e);border:2px solid #d6a05a;border-radius:35px 35px 20px 20px;padding:14px 16px;box-shadow:0 8px 20px #000;margin-top:12px}.key-head{font:700 16px system-ui;letter-spacing:.3em;text-align:center;color:#ffcb92}.controls{display:flex;justify-content:center;align-items:center;gap:12px;margin:10px 0}.controls button,.close,.side-tab{background:#210d0a;color:#ffda9b;border:1px solid #a76b3d;border-radius:6px;padding:8px 14px}.controls button:hover,.close:hover,.side-tab:hover{background:#6c271b}.seek{width:100%;accent-color:#ffc16a}.time{font:12px system-ui;display:flex;justify-content:space-between}.close{position:absolute;right:12px;top:10px;z-index:2;font:700 18px system-ui}.note{font:13px/1.5 system-ui;color:#d8b694;text-align:center}.side-tab{position:fixed;right:0;top:44%;z-index:12;writing-mode:vertical-rl;letter-spacing:.14em}.playlist-panel{position:fixed;right:0;top:0;bottom:0;width:min(370px,95vw);background:#210e0b;z-index:9;padding:25px;box-shadow:-15px 0 45px #000;display:none;overflow:auto}.playlist-panel.open{display:block}.playlist-panel h2{margin-top:0}.playlist-panel button{background:#57291c;color:#ffdb9b;border:1px solid #ae7246;padding:7px;margin:4px}.playlist-panel label{display:block;font:13px system-ui;margin:8px 0}.playlist-panel input{width:100%;padding:8px;background:#110705;border:1px solid #986541;color:#fff}.playlist-row{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #68412e;font:13px system-ui;padding:6px}.full{position:fixed;inset:0;background:#000e;display:none;z-index:15;align-items:center;justify-content:center}.full.open{display:flex}.full img{max-width:95vw;max-height:92vh;object-fit:contain}.full button{position:absolute;top:15px;right:15px;background:#311;color:white;border:1px solid #fff;padding:12px}.empty-info{padding:25px;text-align:center;color:#d2b18e}@media(max-width:750px){.gate{height:94vh;display:block;overflow:auto}.page{min-height:42vh}.tracks{grid-template-columns:1fr 1fr}.track{font-size:11px}.cover{max-height:32vh}.overlay{padding:2vw}.slot{width:9.5%}}
+</style><style>
+/* Locked artwork remains an untouched background asset. All functional areas are overlays. */
+.overlay{padding:1.2vmin}
+.gate{width:min(98vw,calc(96dvh * 2));height:auto;aspect-ratio:2/1;display:block;border:0;box-shadow:0 18px 85px #000;overflow:hidden;background:#140b0c}
+.gate-art{position:absolute;inset:0;background:url('assets/gatefold-locked.png') center/100% 100% no-repeat;pointer-events:none}
+.gate .close{top:1.2%;right:1%;font:700 clamp(10px,1vw,16px) system-ui;background:#1d0809ed;z-index:7;padding:.3em .6em}
+.album-heading{position:absolute;left:8%;top:9%;width:37%;font-size:0}
+.track-columns{position:absolute;left:7.9%;top:29.9%;width:39.1%;height:59.5%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(16,1fr);grid-auto-flow:column;column-gap:3.7%;background:#1a0e13ed;box-shadow:0 0 10px 7px #1a0e13d6;padding:0 .2%}
+.track-columns .track{border:0;background:transparent;color:#f7d6b7;font:500 clamp(8px,1.04vw,18px)/1.05 Arial,sans-serif;min-height:0;padding:0 0 0 1%;display:flex;align-items:center;justify-content:space-between;gap:2px;white-space:nowrap;overflow:hidden}
+.track-columns .track span:first-child{overflow:hidden;text-overflow:ellipsis}
+.track-columns .track .plus{border:1px solid #f5c08a;border-radius:50%;width:1.2em;height:1.2em;flex-shrink:0;display:grid;place-items:center;font-size:.88em;line-height:1}
+.track-columns .track.selected{color:#ffe4a1;background:#77372a88}
+.track-columns .track:hover{background:#8b3c3088}
+.frame{position:absolute;left:58.2%;top:5.6%;width:33.6%;height:51.7%;display:grid;place-items:center;overflow:hidden;border-radius:2%;background:#1c0d16}
+.frame img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.frame .cover-placeholder{position:absolute;inset:0;display:grid;place-items:center;background:#15090de8;color:#e9b77c;font:700 clamp(12px,1.5vw,25px) Georgia,serif;letter-spacing:.1em}
+.frame:has(img:not([hidden])) .cover-placeholder{display:none}
+.marquee{position:absolute;left:71%;top:67.3%;width:20%;height:4.2%;color:#ffad4d;font:700 clamp(9px,1.4vw,25px) monospace;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align:center;text-shadow:0 0 8px #ff6b14;background:#170908}
+.hotspot{position:absolute;border:0;background:#250d0a25;color:#ffe0a8;display:grid;place-items:center;cursor:pointer;padding:0}
+.hotspot:hover{background:#aa472a7a}
+.hot-play{left:73.9%;top:76.6%;width:6.2%;height:7%;font-size:clamp(14px,2.5vw,39px)}
+.hot-prev{left:64.8%;top:77.3%;width:5%;height:6%;font-size:clamp(10px,1.4vw,23px)}
+.hot-next{left:81%;top:77.3%;width:5%;height:6%;font-size:clamp(10px,1.4vw,23px)}
+.hot-seek{position:absolute;left:59.6%;top:86.6%;width:24.2%;height:1.5%;accent-color:#f2c19a;cursor:pointer}
+.hot-time{position:absolute;left:56.5%;top:86.5%;font:clamp(8px,.85vw,14px) Arial,sans-serif;color:#ffe0bd}
+.hot-duration{left:84.2%}
+.hot-volume{position:absolute;left:91.2%;top:86.7%;width:6%;height:1.3%;accent-color:#f6b08b}
+@media(max-width:700px){.gate{width:99vw}.track-columns .track{font-size:clamp(5px,1.03vw,9px)}.track-columns .track .plus{font-size:.7em}.hot-time{font-size:6px}}
+</style><style>
+/* Build 07: activate painted controls without drawing replacements. */
+.gate .hotspot{background:transparent!important;border:0!important;color:transparent!important;font-size:0!important;box-shadow:none!important;outline-offset:-2px}
+.gate .hotspot:hover{background:transparent!important}
+.gate .hotspot:focus-visible{outline:2px solid #f5b66c}
+.gate .hot-play{left:64.5%;top:67.0%;width:4.1%;height:7.6%;border-radius:50%}
+.gate .hot-prev{left:65.1%;top:79.4%;width:4.1%;height:6.6%}
+.gate .hot-next{left:81.2%;top:79.4%;width:4.1%;height:6.6%}
+.gate .hot-shuffle{left:58.4%;top:79.5%;width:4%;height:6.6%}
+.gate .hot-repeat{left:88.8%;top:79.5%;width:4%;height:6.6%}
+.gate .hot-seek{left:59.4%;top:88.4%;width:24.5%;height:2.3%;opacity:0;cursor:pointer}
+.gate .hot-volume{left:91.0%;top:88.6%;width:6.2%;height:2.1%;opacity:0;cursor:pointer}
+.gate .marquee{left:76.7%;top:67.2%;width:18.2%;height:4.2%;background:#190d0cf0;color:#ffa94e;font-size:clamp(9px,1.45vw,22px);padding-top:.25%;}
+.gate .hot-time{background:#1a0b0bee;left:56.6%;top:89.6%;font-size:clamp(8px,.8vw,13px)}
+.gate .hot-duration{left:84.5%}
+.gate .hotspot.is-active{filter:drop-shadow(0 0 5px #ffb04b)}
+</style>
+<style>
+/* Build 08: exact approved blank gatefold art, functional elements in the empty areas. */
+.gate{width:min(98vw,calc(96dvh * 2));aspect-ratio:2/1;height:auto}
+.gate-art{opacity:1!important;background-image:url('assets/gatefold-locked.png')}
+.track-columns{left:8.1%;top:30%;width:39%;height:58%;background:transparent;box-shadow:none;
+grid-template-rows:repeat(16,1fr);column-gap:3.3%;padding:0}
+.track-columns .track{font-size:clamp(8px,1.0vw,17px);color:#f9dbb6;text-shadow:0 1px 2px #000}
+.frame{left:59%;top:6.5%;width:31.6%;height:51%;border:0;background:transparent}
+.frame img{object-fit:contain;width:100%;height:100%}
+.frame .cover-placeholder{background:transparent;color:#bd8d64}
+.gate .marquee{left:70.6%;top:67.1%;width:25.2%;height:5.6%;background:transparent;color:#ffad56;
+font-size:clamp(9px,1.4vw,24px);text-align:center;overflow:hidden;padding-top:.4%}
+.gate .hot-play{left:64.3%;top:67.0%;width:4.3%;height:7.5%;border-radius:50%;background:transparent!important;color:transparent!important}
+.gate .hot-prev,.gate .hot-next,.gate .hot-shuffle,.gate .hot-repeat{
+background:#170a0bbd!important;color:#f3c492!important;font-size:clamp(13px,1.65vw,26px)!important;
+border:1px solid #7c4a36!important;border-radius:7px;box-shadow:0 2px 9px #0006}
+.gate .hot-shuffle{left:58.8%;top:78.6%;width:6.5%;height:6.8%}
+.gate .hot-prev{left:67.0%;top:78.6%;width:6.5%;height:6.8%}
+.gate .hot-next{left:75.2%;top:78.6%;width:6.5%;height:6.8%}
+.gate .hot-repeat{left:83.4%;top:78.6%;width:6.5%;height:6.8%}
+.gate .hot-seek{left:60.1%;top:89.1%;width:26%;height:2%;opacity:1;accent-color:#e7a36b}
+.gate .hot-volume{left:90.5%;top:89.1%;width:7%;height:2%;opacity:1;accent-color:#e7a36b}
+.gate .hot-time{left:57.1%;top:89%;background:transparent;color:#f0c5a5}
+.gate .hot-duration{left:86.7%}
+.gate .hotspot:hover{filter:brightness(1.3)}
+@media(max-width:700px){.track-columns .track{font-size:clamp(5px,1.03vw,8px)}}
+</style>
+<style>
+.side-tab{z-index:12!important;background:#4b1a11!important;box-shadow:-4px 2px 14px #000c!important}
+.playlist-panel{z-index:14!important}
+.gate .hot-stop{left:75.2%;top:78.6%;width:6.5%;height:6.8%;background:#170a0bbd!important;color:#f3c492!important;font-size:clamp(13px,1.65vw,26px)!important;border:1px solid #7c4a36!important;border-radius:7px;box-shadow:0 2px 9px #0006}
+.gate .hot-shuffle{left:55.8%;width:6.4%}
+.gate .hot-prev{left:63.4%;width:6.4%}
+.gate .hot-next{left:83.0%;width:6.4%}
+.gate .hot-repeat{left:90.6%;width:6.4%}
+.track-columns .track .plus{cursor:pointer;background:#32160fbb;flex-shrink:0}
+.track-columns .track .plus:hover,.track-columns .track .plus:focus-visible{background:#a75b27;color:white}
+.playlist-row button{flex-shrink:0}
+.playlist-row button:disabled{opacity:.3;cursor:default}
+.playlist-choice{display:flex;align-items:center;gap:7px;margin:8px 0;font:14px system-ui}
+.playlist-choice input{width:auto!important}
+.playlist-panel .current-playlist{font:700 13px system-ui;color:#ffcc8b}
+</style><style>
+.playlist-choice{display:flex!important;align-items:center;flex-wrap:wrap}
+.playlist-choice .delete-playlist{margin-left:auto;background:#61251e;border-color:#c77a62;font:12px system-ui;padding:5px 8px}
+.playlist-tracks{margin-bottom:14px}
+.playlist-row .move-up,.playlist-row .move-down{min-width:32px}
+</style></head><body><main class="store" aria-label="EXIT 143 album shelf"><div class="slots" id="slots"></div><div class="status">EXIT 143 • 9 ALBUM POSITIONS</div></main><button class="side-tab" id="playlistTab">PLAYLISTS</button><section class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Album gatefold"><div class="gate">
+<button class="close" id="close" aria-label="Close album">✕</button>
+<div class="gate-art" role="img" aria-label="Original locked EXIT 143 Bad Influence gatefold design"></div>
+<div class="album-heading" id="albumTitle">BAD INFLUENCE</div>
+<div class="track-columns" id="tracks"></div>
+<div class="frame" id="frame"><img id="songCover" alt="Selected song artwork"><div class="cover-placeholder" id="coverNote">SELECT A TRACK</div></div>
+<div class="marquee" id="songTitle">Choose a track</div>
+<button class="hotspot hot-play" id="play" aria-label="Play or pause"></button>
+<button class="hotspot hot-prev" id="prev" aria-label="Previous track">⏮</button>
+<button class="hotspot hot-next" id="next" aria-label="Next track">⏭</button>
+<button class="hotspot hot-stop" id="stopPause" aria-label="Pause playback">⏸</button>
+<input class="hot-seek" id="seek" aria-label="Seek" type="range" min="0" max="1000" value="0">
+<span class="hot-time" id="elapsed">0:00</span><span class="hot-time hot-duration" id="duration">0:00</span>
+<input class="hot-volume" id="volume" aria-label="Volume" type="range" min="0" max="100" value="85">
+<button class="hotspot hot-shuffle" id="shuffle" aria-label="Toggle shuffle">⤨</button><button class="hotspot hot-repeat" id="repeat" aria-label="Toggle repeat">↻</button><div id="lyrics" hidden></div><div id="albumLabel" hidden></div>
+</div></section><aside class="playlist-panel" id="playlistPanel"><button id="playlistClose">Close ✕</button><h2>PLAYLISTS</h2><label>Playlist name<input id="listName" placeholder="My EXIT 143 mix"></label><button id="createList">Create playlist</button><p class="current-playlist" id="currentPlaylist">No playlist selected</p><div id="lists"></div><p class="note">Playlists save in this browser. Add a selected song using the button below.</p><button id="addSong">Add selected song</button><button id="shareList">Copy playlist link</button></aside><div class="full" id="full"><button id="fullClose">Close ✕</button><img id="fullImage" alt="Full-screen artwork"></div><audio id="audio" preload="metadata"></audio><script>
+const albums=[{name:'BAD INFLUENCE',kind:'bad'},{name:'THOUGHTY NAUGHTS',kind:'thoughty'}];let badTracks=[],albumIndex=-1,selected=-1,activeTracks=[],playlistName='';const $=id=>document.getElementById(id),audio=$('audio');const coverMap=[['Ain’t No Saint','Aint_No_Saint_Church_Wall_Comic_Caricature_LOCKED_MASTER.png'],['Bad Habits Look Good','Bad Habits Look Good on You - LOCKED MASTER.png'],['Bad Intentions','Bad Intentions - Approved Master Three Blue Roses.png'],['Keep Your Hands','Keep_Your_Hands_to_Yourself_LOCKED_MASTER.png'],['Make a Bad Decision','Make a Bad Decision - APPROVED MASTER.png'],['More and More','More and More - APPROVED MASTER.png'],['The Neon Don','the neon dont lie final art.png']];const covers={};
+function coverFor(t){let name=t.title.toLowerCase();let match=coverMap.find(x=>name.includes(x[0].toLowerCase().replace('’',"'"))||name.replace('’',"'").includes(x[0].toLowerCase().replace('’',"'")));return match?'assets/covers/'+match[1]:null}
+function makeSlots(){let s=$('slots');s.replaceChildren();for(let i=0;i<9;i++){let b=document.createElement('button');b.className='slot '+(i>1?'empty':'');b.style.left=(14.5+(i%3)*30.8)+'%';b.style.top=([24.0,47.5,71.0][Math.floor(i/3)])+'%';b.setAttribute('aria-label',albums[i]?.name||'Future album position');let c=document.createElement('div');c.className='sleeve';if(i<2){let img=document.createElement('img');img.src=i===0?'assets/albums/bad-influence.jpg':'assets/albums/thoughty-preview.png';img.alt=i===0?'BAD INFLUENCE album cover':'DRIP approved single artwork, temporary THOUGHTY NAUGHTS shelf preview';c.append(img);if(i===1){let tag=document.createElement('span');tag.className='album-preview';tag.textContent='THOUGHTY NAUGHTS · DRIP PREVIEW';c.append(tag)}}b.append(c);if(i<2)b.onclick=()=>openAlbum(i);s.append(b)}}
+function openAlbum(i){albumIndex=i;selected=-1;activeTracks=i===0?badTracks:[{title:'DRIP',audio:'audio/let-it-drip-clean.mp3',cover:'assets/drip.png'},{title:'UNTIL',audio:'audio/until-you-clean.mp3',cover:'assets/until.png'}];$('albumTitle').textContent=albums[i].name;$('albumLabel').textContent='EXIT 143 • ALBUM '+(i+1);$('tracks').replaceChildren();activeTracks.forEach((t,j)=>{let b=document.createElement('button');b.className='track';let title=document.createElement('span');title.textContent=String(j+1).padStart(2,'0')+'. '+t.title;
+let plus=document.createElement('span');plus.className='plus';plus.textContent='+';
+plus.setAttribute('role','button');plus.setAttribute('tabindex','0');plus.setAttribute('aria-label','Add '+t.title+' to playlist');
+plus.onclick=e=>{e.stopPropagation();addTrackToPlaylist(t,albums[i].name)};
+plus.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();addTrackToPlaylist(t,albums[i].name)}};
+b.append(title,plus);b.onclick=()=>selectSong(j);$('tracks').append(b)});$('overlay').classList.add('open');$('songTitle').textContent='Choose a track';$('songCover').hidden=true;$('coverNote').textContent='SELECT A TRACK';audio.pause();audio.removeAttribute('src');audio.load();$('play').setAttribute('aria-label','Play');$('elapsed').textContent='0:00';$('duration').textContent='0:00';$('seek').value=0;if(activeTracks.length)selectSong(0)}
+function selectSong(j,autoplay=false){if(j<0||j>=activeTracks.length)return;selected=j;$('stopPause').textContent='⏸';let t=activeTracks[j];document.querySelectorAll('.track').forEach((b,i)=>b.classList.toggle('selected',i===j));$('songTitle').textContent=t.title;let c=t.cover||coverFor(t);$('songCover').hidden=!c;if(c)$('songCover').src=c;else $('songCover').removeAttribute('src');$('coverNote').textContent=c?'Click artwork to enlarge.':'Approved artwork not yet connected.';audio.pause();audio.removeAttribute('src');if(t.audio){audio.src=t.audio;audio.load()}$('play').setAttribute('aria-label','Play');$('seek').value=0;$('elapsed').textContent='0:00';$('duration').textContent='0:00';if(autoplay&&t.audio)audio.play().catch(()=>{})}
+function closeAlbum(){audio.pause();audio.removeAttribute('src');audio.load();$('overlay').classList.remove('open');selected=-1;albumIndex=-1}function fmt(n){if(!Number.isFinite(n))return '0:00';return Math.floor(n/60)+':'+String(Math.floor(n%60)).padStart(2,'0')}
+let shuffleOn=false,repeatOn=false;$('shuffle').onclick=()=>{shuffleOn=!shuffleOn;$('shuffle').classList.toggle('is-active',shuffleOn);$('shuffle').setAttribute('aria-pressed',String(shuffleOn))};$('repeat').onclick=()=>{repeatOn=!repeatOn;$('repeat').classList.toggle('is-active',repeatOn);$('repeat').setAttribute('aria-pressed',String(repeatOn))};$('close').onclick=closeAlbum;$('play').onclick=()=>{if(selected<0)return; if(!audio.src||!activeTracks[selected].audio)return;if(audio.paused)audio.play().catch(()=>{});else audio.pause()};$('stopPause').onclick=()=>{if(!audio.paused){audio.pause();$('stopPause').textContent='⏹';$('stopPause').setAttribute('aria-label','Stop and reset')}else{audio.pause();try{audio.currentTime=0}catch{}$('stopPause').textContent='⏸';$('stopPause').setAttribute('aria-label','Pause playback')}};$('prev').onclick=()=>selectSong(Math.max(0,selected-1));$('next').onclick=()=>selectSong(Math.min(activeTracks.length-1,selected+1));audio.onplay=()=>{$('play').setAttribute('aria-label','Pause');$('stopPause').textContent='⏸';$('stopPause').setAttribute('aria-label','Pause playback')};audio.onpause=()=>$('play').setAttribute('aria-label','Play');audio.onloadedmetadata=()=>$('duration').textContent=fmt(audio.duration);audio.ontimeupdate=()=>{$('elapsed').textContent=fmt(audio.currentTime);$('seek').value=audio.duration?Math.round(audio.currentTime/audio.duration*1000):0};$('seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*Number(e.target.value)/1000};$('volume').oninput=e=>{audio.volume=Number(e.target.value)/100};audio.volume=.85;audio.onended=()=>{if(repeatOn){audio.currentTime=0;audio.play().catch(()=>{});return}if(shuffleOn&&activeTracks.length>1){let j=selected;while(j===selected)j=Math.floor(Math.random()*activeTracks.length);selectSong(j,true);return}if(selected+1<activeTracks.length)selectSong(selected+1,true);else $('play').setAttribute('aria-label','Play')};$('songCover').onclick=()=>{if(!$('songCover').hidden){$('fullImage').src=$('songCover').src;$('full').classList.add('open')}};$('fullClose').onclick=()=>$('full').classList.remove('open');document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('full').classList.remove('open');$('playlistPanel').classList.remove('open');if($('overlay').classList.contains('open'))closeAlbum()}});
+
+const storageKey='exit143-playlists-v1';let lists={};
+try{lists=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}}catch(e){lists={}}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(lists))}catch(e){console.warn('Local storage unavailable',e)}renderLists()}
+function ensurePlaylist(){if(!Object.keys(lists).length){lists['My EXIT 143 Mix']=[];playlistName='My EXIT 143 Mix';save()}if(!playlistName||!Object.prototype.hasOwnProperty.call(lists,playlistName))playlistName=Object.keys(lists)[0];return playlistName}
+function addTrackToPlaylist(t,album){let name=ensurePlaylist();lists[name].push({title:t.title,audio:t.audio||null,cover:t.cover||null,album});save();$('playlistPanel').classList.add('open')}
+function renderLists(){
+ $('lists').replaceChildren();$('currentPlaylist').textContent=playlistName?'Selected: '+playlistName:'Choose or create a playlist';
+ for(let [name,items] of Object.entries(lists)){
+  let head=document.createElement('label');head.className='playlist-choice';
+  let radio=document.createElement('input');radio.type='radio';radio.name='activePlaylist';radio.checked=name===playlistName;
+  radio.onchange=()=>{playlistName=name;renderLists()};
+  let title=document.createElement('strong');title.textContent=name+' ('+items.length+')';head.append(radio,title);
+  let deleteList=document.createElement('button');deleteList.type='button';deleteList.className='delete-playlist';deleteList.textContent='Delete playlist';
+  deleteList.setAttribute('aria-label','Delete playlist '+name);
+  deleteList.onclick=()=>{if(!confirm('Delete playlist "'+name+'" and its saved song list? Original album tracks and files will not be deleted.'))return;
+   delete lists[name];if(playlistName===name)playlistName=Object.keys(lists)[0]||'';save()};
+  head.append(deleteList);$('lists').append(head);
+  let container=document.createElement('div');container.className='playlist-tracks';$('lists').append(container);
+  function updateArrows(){
+   [...container.children].forEach((r,index)=>{
+    r.querySelector('.move-up').disabled=index===0;
+    r.querySelector('.move-down').disabled=index===container.children.length-1;
+   })
+  }
+  items.forEach((t,i)=>{
+   let row=document.createElement('div');row.className='playlist-row';let label=document.createElement('span');label.textContent=t.title;label.style.flex='1';
+   let up=document.createElement('button');up.type='button';up.className='move-up';up.textContent='↑';up.title='Move up';
+   let down=document.createElement('button');down.type='button';down.className='move-down';down.textContent='↓';down.title='Move down';
+   const move=direction=>{
+    let at=[...container.children].indexOf(row),to=at+direction;
+    if(to<0||to>=items.length)return;
+    [items[at],items[to]]=[items[to],items[at]];
+    if(direction<0)container.insertBefore(row,container.children[to]);
+    else container.insertBefore(container.children[to],row);
+    try{localStorage.setItem(storageKey,JSON.stringify(lists))}catch(e){console.warn('Playlist save failed',e)}
+    updateArrows();
+    // Keep the moving track's arrow under the pointer for repeated mouse clicks.
+    row.scrollIntoView({block:'nearest'});
+   };
+   up.onclick=()=>move(-1);down.onclick=()=>move(1);
+   let del=document.createElement('button');del.type='button';del.textContent='×';del.title='Remove from playlist';
+   del.onclick=()=>{let at=[...container.children].indexOf(row);items.splice(at,1);row.remove();save()};
+   row.append(label,up,down,del);container.append(row)
+  });
+  updateArrows();
+ }
+}
+$('playlistTab').onclick=()=>$('playlistPanel').classList.add('open');
+$('playlistClose').onclick=()=>$('playlistPanel').classList.remove('open');
+$('createList').onclick=()=>{let n=$('listName').value.trim();if(n){lists[n]??=[];playlistName=n;$('listName').value='';save()}};
+$('addSong').onclick=()=>{if(selected>=0&&albumIndex>=0)addTrackToPlaylist(activeTracks[selected],albums[albumIndex].name)};
+$('shareList').onclick=()=>{let n=ensurePlaylist();let data=btoa(unescape(encodeURIComponent(JSON.stringify({name:n,tracks:lists[n]}))));let url=location.href.split('#')[0]+'#playlist='+encodeURIComponent(data);if(navigator.clipboard?.writeText)navigator.clipboard.writeText(url).then(()=>alert('Playlist link copied. Music must be hosted online for others to play.')).catch(()=>prompt('Copy link:',url));else prompt('Copy link:',url)};
+try{let v=location.hash.match(/playlist=([^&]+)/);if(v){let p=JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(v[1])))));if(p.name&&Array.isArray(p.tracks)){lists[p.name]=p.tracks;playlistName=p.name;save();$('playlistPanel').classList.add('open')}}}catch{}badTracks=[{"title":"Ain't No Saint in This Room","audio":"audio/01.mp3","cover":"assets/covers/Aint_No_Saint_Church_Wall_Comic_Caricature_LOCKED_MASTER.png"},{"title":"At Closing Time","audio":"audio/02.mp3","cover":"assets/covers/At Closing Time_ finished master.png"},{"title":"Back It Up, Slow","audio":"audio/03.mp3","cover":"assets/covers/Back It Up Slow.png"},{"title":"Bad Habit","audio":"audio/04.mp3","cover":"assets/covers/Bad Habit.png"},{"title":"Bad Habits Look Good on You","audio":"audio/05.mp3","cover":"assets/covers/Bad Habits Look Good on You - LOCKED MASTER.png"},{"title":"Bad Intentions","audio":"audio/06.mp3","cover":"assets/covers/Bad Intentions - Approved Master Three Blue Roses.png"},{"title":"Can’t Say That in Church","audio":"audio/07.mp3","cover":"assets/covers/Can't Say That in Church - LOCKED MASTER.png"},{"title":"Don't Start What You Can't","audio":"audio/08.mp3","cover":"assets/covers/dont start what you can't.png"},{"title":"Hold you like my beer","audio":"audio/09.mp3","cover":"assets/covers/hold you like my beer.png"},{"title":"I'm Missin' My Mama","audio":"audio/10.mp3","cover":"assets/covers/missin my mama master .png"},{"title":"Keep Your Hands To Yourself","audio":"audio/11.mp3","cover":"assets/covers/Keep_Your_Hands_to_Yourself_LOCKED_MASTER.png"},{"title":"Make a Bad Decision","audio":"audio/13.mp3","cover":"assets/covers/Make a Bad Decision - APPROVED MASTER.png"},{"title":"Make It Bounce","audio":"audio/12.mp3","cover":"assets/covers/Make It Bounce_ Neon Nightclub Energy.png"},{"title":"More and More","audio":"audio/14.mp3","cover":"assets/covers/More and More - APPROVED MASTER.png"},{"title":"Mouth Full of Maybe","audio":"audio/15.mp3","cover":"assets/covers/Mouth Full of Maybe master.png"},{"title":"Pretty Little Sin","audio":"audio/16.mp3","cover":"assets/covers/Pretty Little Sin - Approved Master.png"},{"title":"Pull the Shades","audio":"audio/17.mp3","cover":"assets/covers/Pull the Shades.png"},{"title":"Quit Actin' Innocent","audio":"audio/18.mp3","cover":"assets/covers/quit acting innocent master.png"},{"title":"Shake Dem Assets","audio":"audio/19.mp3","cover":"assets/covers/shake dem assets mastered.png"},{"title":"She Do Da Voodoo","audio":"audio/20.mp3","cover":"assets/covers/She Do Da Voodoo - Approved Master.png"},{"title":"Sugar, You Taste Like Sin","audio":"audio/21.mp3","cover":"assets/covers/Sugar You Taste Like Sin - Approved Master .png"},{"title":"Take You Home to Mama","audio":"audio/22.mp3","cover":"assets/covers/Take You Home to Mama Sunset Embrace.png"},{"title":"Take Your Time With Me","audio":"audio/23.mp3","cover":"assets/covers/Take Your Time With Me - Bo and Suga - LOCKED MASTER.png"},{"title":"That Ain't What I Meant","audio":"audio/24.mp3","cover":"assets/covers/That Ain't What I Meant - LOCKED MASTER.png"},{"title":"The Devil Made Me Do It","audio":"audio/25.mp3","cover":"assets/covers/Devil Made Me Do It.png"},{"title":"The Neon Don't Lie","audio":"audio/26.mp3","cover":"assets/covers/the neon dont lie final art.png"},{"title":"Touch Like a Switchblade","audio":"audio/27.mp3","cover":"assets/covers/Touch Like a Switchblade - Style 3 - FINAL LOCKED COVER.png"},{"title":"Whisper My Name","audio":"audio/28.mp3","cover":"assets/covers/whisper-my-name-locked.png"},{"title":"You Ain't Ready","audio":"audio/29.mp3","cover":"assets/covers/You Ain't Ready MASTER .png"},{"title":"You Know Who You Belong To","audio":"audio/30.mp3","cover":"assets/covers/You Know Who You Belong To - FINAL APPROVED MASTER - No Suga Tattoos.png"}];makeSlots();renderLists();
+</script></body></html>
